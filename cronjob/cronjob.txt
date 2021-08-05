@@ -1,0 +1,8 @@
+<< comment
+this is cronjobs and its denotes as
+minutes hours days months weekdays scriptfile name
+1 * * * *  >> means evryhour at 1
+*/1 * * * * * >> every minute
+* 9,10 * * * >> at 9 A.M 10 A.m.
+comment
+*/1 * * * * /home/snabhi/shell_scripting_practice/backsup.sh
