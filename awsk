@@ -1,0 +1,60 @@
+awk options 'pattern {action} ' filename 
+
+command | awk options 'pattern {action} ' filename 
+
+awk 'NR==3 {print $2}' filename
+
+optikons:--
+-F fs To specify field separator
+-v var=value TO declare a variable.
+-f file specify a file that contains awk script
+----------------------------------------
+
+awk '{print $NF}' praoc.txt    >> TO PRINT THE LAST FIELD OF EVERY ROW.
+------------------------------
+AWK FOR SCRIPTING SYNTAX:-
+
+awk 'BEGIN {start action} pattern/condition {action} END {stop action}' filename
+
+awk -f awk_script.awk filename
+-------------------------
+reaad value from the file in awk
+
+echo "$a $b" | awk '{ a=$1 ;b=$2 ;print a,b }'
+---------------------------------------------------------------------------
+
+SED COMMAND
+
+sed [optikons] command [file to work with sed]
+
+sed '' praoc.txt    >> to print the content of the file
+
+sed '-n '2p' praoc.txt  >> to print the second line
+
+sed -n '$p' file.txt  >> to print the last line
+
+sed -n '10,+7p' filename   >> to print the line from 10 line followed by 7 more line
+
+sed '7d' praoc.txt    >> to delete the particular line from file
+
+ sed -i '10,+7p' filename  >> to remove the lines in the original file  i.e. it'll delete from the file .
+ 
+ sed -i.back '10,+7p' filename  >> it'll remove the file but before that it'll keep the backup also
+ 
+ sed -n '/RIGHT/p' praoc.txt   >> it 'll find the pattern in the file & print the line
+ 
+ sed  '/RIGHT/!d' praoc.txt   >> it'll delete all the which are not having RIGHT in the line
+
+sed 's/RIGHT/very right/' praoc.txt   >> substitute given string only once 
+
+sed 's/RIGHT/very right/'g praoc.txt  >> substitute given string across all the line  
+
+sed 's/RIGHT/very right/2' praoc.txt  >> substitute 2nd occurence of the word .
+
+sed '/RIGHT/s/DJSA/DJ SINGH/' praoc.txt   >> FIND THE RIGHT PATTERN IN THE LINE AND IN THAT LINE REPLACE DJSA WITH DJ SINGH/
+
+sed '1i HELLO WORLD " praoc.txt  >> this will insert the line at line no 1
+
+sed '1a HELLO WORLD " praoc.txt  >> this will insert the line after line no 1
+
+sed '$a HELLO WORLD " praoc.txt  >> this will insert the line after last line
